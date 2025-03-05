@@ -44,7 +44,11 @@ Acceptance criteria:
 
  - Java - 21.0.4
  - Maven - 3.9.9
- - JUnit - 5.12.0
+ - JUnit - 4.13.2
  - Architecture design - Lucid chart
  
 ### Environment Setup
+
+```
+mvn -B archetype:generate -DgroupId=com.xorg.wo -DartifactId=workforce-optimizer -Dversion=1.0.0 -DarchetypeGroupId=com.dominikcebula.archetypes -DarchetypeArtifactId=java21-basic-archetype -DarchetypeVersion=1.0
+```
