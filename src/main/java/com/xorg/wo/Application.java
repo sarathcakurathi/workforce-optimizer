@@ -1,8 +1,11 @@
 package com.xorg.wo;
 
+import com.xorg.wo.optimizer.WorkforceOptimizer;
+
 public class Application {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        WorkforceOptimizer optimizer = new WorkforceOptimizer();
+        optimizer.optimizeWorkforce();
     }
 }

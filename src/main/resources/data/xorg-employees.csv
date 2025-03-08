@@ -1,0 +1,249 @@
+id,firstName,lastName,salary,managerId
+1,CEO,Johnson,200000,-1
+2,Isabella,Rodriguez,65000,3
+3,Ethan,Martinez,72000,1
+4,Olivia,Garcia,90000,6
+5,Noah,Lopez,58000,6
+6,Sophia,Gonzalez,80000,1
+7,Liam,Perez,110000,12
+8,Ava,Sanchez,68000,10
+9,William,Ramirez,75000,12
+10,Mia,Torres,60000,1
+11,James,Flores,95000,16
+12,Charlotte,Rivera,78000,1
+13,Benjamin,Diaz,120000,18
+14,Amelia,Ortiz,62000,16
+15,Daniel,Gomez,85000,1
+16,Harper,Ruiz,100000,1
+17,Elijah,Moreno,130000,22
+18,Abigail,Gutierrez,69000,1
+19,Samuel,Romero,140000,24
+20,Emily,Alvarez,76000,1
+21,Matthew,Castillo,150000,26
+22,Elizabeth,Chavez,63000,1
+23,David,Reyes,160000,28
+24,Sofia,Hernandez,82000,1
+25,Joseph,Medina,170000,30
+26,Scarlett,Vargas,79000,1
+27,Henry,Jimenez,180000,32
+28,Grace,Delgado,61000,1
+29,Christopher,Cruz,190000,34
+30,Chloe,Ramos,77000,1
+31,Alexander,Navarro,200000,36
+32,Victoria,Herrera,67000,1
+33,Michael,Vega,210000,38
+34,Avery,Silva,81000,1
+35,Ryan,Rios,220000,40
+36,Madison,Mendoza,70000,1
+37,Jackson,Ortiz,230000,42
+38,Lily,Castro,66000,1
+39,Andrew,Soto,240000,44
+40,Penelope,Herrera,83000,1
+41,Gabriel,Sandoval,250000,46
+42,Layla,Vasquez,71000,1
+43,Owen,Ramirez,260000,48
+44,Ellie,Reyes,64000,1
+45,Isaac,Perez,270000,50
+46,Zoey,Torres,84000,1
+47,Luke,Flores,280000,52
+48,Stella,Diaz,73000,1
+49,Anthony,Ortiz,290000,54
+50,Hazel,Gomez, ,52
+51,John,Doe,300000,1
+52,Aurora,Ruiz,74000,54
+53,Caleb,Moreno,310000,56
+54,Nora,Gutierrez, ,56
+55,Nathan,Romero,320000,1
+56,Violet,Alvarez, ,58
+57,Aaron,Castillo,330000,58
+58,Audrey,Chavez, ,60
+59,Jose,Reyes,340000,60
+60,Bella,Hernandez, ,62
+61,Kevin,Medina,350000,62
+62,Samantha,Vargas, ,64
+63,Adam,Jimenez,360000,64
+64,Maya,Delgado, ,66
+65,Brandon,Cruz,370000,66
+66,Paisley,Ramos, ,68
+67,Kyle,Navarro,380000,68
+68,Sadie,Herrera, ,70
+69,Bryan,Vega,390000,70
+70,Piper,Silva, ,72
+71,Jordan,Rios,400000,1
+72,Elena,Mendoza,410000,71
+73,Adrian,Kim,55000,3
+74,Brianna,Wright,78000,3
+75,Carlos,Young,92000,6
+76,Danielle,Hall,59000,6
+77,Edward,Allen,83000,10
+78,Felicity,Scott,115000,12
+79,George,Green,70000,10
+80,Hannah,Baker,77000,12
+81,Ian,Adams,63000,15
+82,Julia,Nelson,98000,16
+83,Kevin,Carter,80000,15
+84,Laura,Mitchell,125000,18
+85,Mason,Perez,65000,16
+86,Natalie,Roberts,88000,18
+87,Oscar,Turner,105000,20
+88,Penelope,Phillips,135000,22
+89,Quentin,Campbell,72000,20
+90,Riley,Parker,145000,24
+91,Samuel,Evans,79000,22
+92,Taylor,Edwards,155000,26
+93,Ursula,Collins,66000,24
+94,Victor,Stewart,165000,28
+95,Wendy,Sanchez,85000,26
+96,Xavier,Morris,175000,30
+97,Yvonne,Rogers,82000,28
+98,Zachary,Reed,185000,32
+99,Alice,Cook,64000,30
+100,Bob,Morgan,195000,34
+101,Carol,Bell,80000,32
+102,David,Bailey,205000,36
+103,Eve,Rivera,68000,34
+104,Frank,Cooper,215000,38
+105,Grace,Howard,84000,36
+106,Henry,Ward,225000,40
+107,Ivy,Peterson,73000,38
+108,Jack,Gray,235000,42
+109,Kelly,James,69000,40
+110,Leo,Bennett,245000,44
+111,Molly,Powell,86000,42
+112,Nathan,Long,255000,46
+113,Olive,Ross,75000,44
+114,Paul,Jenkins,265000,48
+115,Quinn,Perry,67000,46
+116,Ryan,Murphy,275000,50
+117,Sophie,Hayes,87000,48
+118,Tom,Ford,285000,52
+119,Ursula,Murray,76000,50
+120,Vincent,Woods,295000,54
+121,Wendy,Myers,78000,52
+122,Xander,Stone,305000,1
+123,Yara,Kelly,78000,54
+124,Zane,Howard,315000,56
+125,Abigail,Watson,80000,56
+126,Benjamin,Barnes,325000,58
+127,Cameron,Ross,82000,58
+128,David,Foster,335000,60
+129,Eleanor,Sanders,84000,60
+130,Frederick,Price,345000,62
+131,Gabrielle,Bennett,86000,62
+132,Harold,Wood,355000,64
+133,Isabelle,Barnes,88000,64
+134,Jack,Ross,365000,66
+135,Katherine,Foster,90000,66
+136,Louis,Sanders,375000,68
+137,Margaret,Price,92000,68
+138,Nathan,Bennett,385000,70
+139,Olivia,Wood,94000,70
+140,Peter,Barnes,395000,72
+141,Queen,Ross,96000,72
+142,Robert,Foster,405000,1
+143,Samantha,Sanders,98000,1
+144,Thomas,Price,415000,143
+145,Ursula,Bennett,100000,143
+146,Vincent,Wood,425000,145
+147,Wendy,Barnes, ,145
+148,Xavier,Ross,435000,147
+149,Yara,Foster, ,147
+150,Zane,Sanders,445000,149
+151,Abigail,Price, ,149
+152,Benjamin,Bennett,455000,151
+153,Cameron,Wood, ,151
+154,David,Barnes,465000,153
+155,Eleanor,Ross, ,153
+156,Frederick,Foster,475000,155
+157,Gabrielle,Sanders, ,155
+158,Harold,Price,485000,157
+159,Isabelle,Bennett, ,157
+160,Jack,Wood,495000,159
+161,Katherine,Barnes, ,159
+162,Louis,Ross,505000,161
+163,Margaret,Foster, ,161
+164,Nathan,Sanders,515000,163
+165,Olivia,Price, ,163
+166,Peter,Bennett,525000,165
+167,Queen,Wood, ,165
+168,Robert,Barnes,535000,167
+169,Samantha,Ross, ,167
+170,Thomas,Foster,545000,169
+171,Ursula,Sanders, ,169
+172,Vincent,Price,555000,171
+173,Wendy,Bennett, ,171
+174,Xavier,Wood,565000,173
+175,Yara,Barnes, ,173
+176,Zane,Ross,575000,175
+177,Abigail,Foster, ,175
+178,Benjamin,Sanders,585000,177
+179,Cameron,Price, ,177
+180,David,Bennett,595000,179
+181,Eleanor,Wood, ,179
+182,Frederick,Barnes,605000,181
+183,Gabrielle,Ross, ,181
+184,Harold,Foster,615000,183
+185,Isabelle,Sanders, ,183
+186,Jack,Price,625000,185
+187,Katherine,Bennett, ,185
+188,Louis,Wood,635000,187
+189,Margaret,Barnes, ,187
+190,Nathan,Ross,645000,189
+191,Olivia,Foster, ,189
+192,Peter,Sanders,655000,191
+193,Queen,Price, ,191
+194,Robert,Bennett,665000,193
+195,Samantha,Wood, ,193
+196,Thomas,Barnes,675000,195
+197,Ursula,Ross, ,195
+198,Vincent,Foster,685000,197
+199,Wendy,Sanders, ,197
+200,Xavier,Price,695000,199
+201,Yara,Bennett, ,199
+202,Zane,Wood,705000,201
+203,Abigail,Barnes, ,201
+204,Benjamin,Ross,715000,203
+205,Cameron,Foster, ,203
+206,David,Sanders,725000,205
+207,Eleanor,Price, ,205
+208,Frederick,Bennett,735000,207
+209,Gabrielle,Wood, ,207
+210,Harold,Barnes,745000,209
+211,Isabelle,Ross, ,209
+212,Jack,Foster,755000,211
+213,Katherine,Sanders, ,211
+214,Louis,Price,765000,213
+215,Margaret,Bennett, ,213
+216,Nathan,Wood,775000,215
+217,Olivia,Barnes, ,215
+218,Peter,Ross,785000,217
+219,Queen,Foster, ,217
+220,Robert,Sanders,795000,219
+221,Samantha,Price, ,219
+222,Thomas,Bennett,805000,221
+223,Ursula,Wood, ,221
+224,Vincent,Barnes,815000,223
+225,Wendy,Ross, ,223
+226,Xavier,Foster,825000,225
+227,Yara,Sanders, ,225
+228,Zane,Price,835000,227
+229,Abigail,Bennett, ,227
+230,Benjamin,Wood,845000,229
+231,Cameron,Barnes, ,229
+232,David,Ross,855000,231
+233,Eleanor,Foster, ,231
+234,Frederick,Sanders,865000,233
+235,Gabrielle,Price, ,233
+236,Harold,Bennett,875000,235
+237,Isabelle,Wood, ,235
+238,Jack,Barnes,885000,237
+239,Katherine,Ross, ,237
+240,Louis,Foster,895000,239
+241,Margaret,Sanders, ,239
+242,Nathan,Price,905000,241
+243,Olivia,Bennett, ,241
+244,Peter,Wood,915000,243
+245,Queen,Barnes, ,243
+246,Sarath,Akurathi,45000,146
+247,Chris,Bryer,70000,141
+248,Srikanth,Bhaskaran,80000,247

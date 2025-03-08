@@ -34,6 +34,7 @@ Acceptance criteria:
 
 #### Assumptions
 
+ - If CEO is not available in the data then abort the execution
  - CEO has an employee id of `-1`
  - A valid employee must have at least an employee ID and a salary
     - An invalid employee record will be dropped from processing (Eg: employee doesn't have an id/salary)
