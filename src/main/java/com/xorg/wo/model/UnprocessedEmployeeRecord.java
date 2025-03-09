@@ -1,29 +1,19 @@
 package com.xorg.wo.model;
 
-import com.opencsv.bean.CsvBindByName;
+import com.xorg.wo.optimizer.WorkforceOptimizer;
 import com.xorg.wo.proc.ConfigLoader;
-import com.xorg.wo.utils.GlobalConstants;
+import com.xorg.wo.utils.Constants;
 
 import java.lang.reflect.Field;
+import java.util.logging.Logger;
 
 public class UnprocessedEmployeeRecord {
-    @CsvBindByName(column = "id")
-    private String id;
-
-    @CsvBindByName(column = "firstName")
-    private String firstName;
-
-    @CsvBindByName(column = "lastName")
-    private String lastName;
-
-    @CsvBindByName(column = "salary")
-    private String salary;
-
-    @CsvBindByName(column = "managerId")
-    private String managerId;
-
-    // Constructor for OpenCSV
-    public UnprocessedEmployeeRecord() {}
+    private static final Logger logger = Logger.getLogger( UnprocessedEmployeeRecord.class.getName() );
+    private final String id;
+    private final String firstName;
+    private final String lastName;
+    private final String salary;
+    private final String managerId;
 
     public UnprocessedEmployeeRecord(String id, String firstName, String lastName, String salary, String managerId) {
         this.id = id;
@@ -36,10 +26,11 @@ public class UnprocessedEmployeeRecord {
     public boolean isValid() {
         String[] REQUIRED_FIELDS = new String[0];
         try {
-            String requiredFieldsStr = ConfigLoader.getString(GlobalConstants.EMPLOYEE_DATA_REQUIRED_FIELDS, GlobalConstants.EMPLOYEE_DATA_REQUIRED_FIELDS_DEFAULT);
+            String requiredFieldsStr = ConfigLoader.getString(Constants.EMPLOYEE_DATA_REQUIRED_FIELDS, Constants.EMPLOYEE_DATA_REQUIRED_FIELDS_DEFAULT);
             if (requiredFieldsStr != null) {
                 REQUIRED_FIELDS = requiredFieldsStr.split(",");
             }
+            // Using Reflection to validate the required fields
             for (String fieldName : REQUIRED_FIELDS) {
                 Field field = this.getClass().getDeclaredField(fieldName);
                 field.setAccessible(true); // Access private fields
@@ -50,15 +41,16 @@ public class UnprocessedEmployeeRecord {
                 }
             }
         } catch (NoSuchFieldException | IllegalAccessException e) {
-            e.printStackTrace(); //ToDo: replace with proper logger
+            logger.warning(String.format(Constants.INVALID_EMPLOYEE_ATTRIBUTE_PROVIDED_IN_CONFIGURATION, e.getLocalizedMessage()));
             return false;
         }
         return true;
     }
 
     public Employee transform() {
-        return new Employee(Integer.parseInt(id), firstName, lastName, Double.parseDouble(salary),
-                (managerId == null || managerId.isEmpty()) ? GlobalConstants.DEFAULT_MANAGER_ID : Integer.parseInt(managerId));
+        return new Employee(Integer.parseInt(id), firstName, lastName,
+                (salary == null || salary.isEmpty()) ? Constants.EMPLOYEE_DEFAULT_SALARY : Double.parseDouble(salary),
+                (managerId == null || managerId.isEmpty()) ? Constants.DEFAULT_MANAGER_ID : Integer.parseInt(managerId));
     }
 
     @Override

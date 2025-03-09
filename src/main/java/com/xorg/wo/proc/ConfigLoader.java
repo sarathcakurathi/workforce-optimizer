@@ -1,23 +1,25 @@
 package com.xorg.wo.proc;
 
-import com.xorg.wo.utils.GlobalConstants;
+import com.xorg.wo.utils.Constants;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 public class ConfigLoader {
     private static final Properties properties = new Properties();
+    private static final Logger logger = Logger.getLogger( ConfigLoader.class.getName() );
 
     static {
-        try (InputStream inputStream = ConfigLoader.class.getClassLoader().getResourceAsStream(GlobalConstants.CONFIG_FILE)) {
+        try (InputStream inputStream = ConfigLoader.class.getClassLoader().getResourceAsStream(Constants.CONFIG_FILE)) {
             properties.load(inputStream);
         } catch (IOException | NullPointerException e) {
-            throw new RuntimeException(GlobalConstants.ERROR_FILE_NOT_FOUND, e); // Todo: Proper exception handling
+            logger.severe(String.format(Constants.ERROR_FILE_NOT_FOUND, Constants.CONFIG_FILE, e.getLocalizedMessage()));
+            System.exit(Constants.EXIT_CODE_FILE_NOT_FOUND);
         }
     }
 
-    // ToDo: Add a test case to check the scenario
     public static String getString(String key, String defaultValue) {
         String value = properties.getProperty(key);
         if (value != null) {
@@ -32,20 +34,19 @@ public class ConfigLoader {
             try {
                 return Integer.parseInt(properties.getProperty(key));
             } catch (NumberFormatException e) {
-                System.err.println("Error parsing integer for key: " + key + ". Using default.");
+                logger.warning(String.format(Constants.ERROR_PROCESSING_EMPLOYEE_RECORD_INTEGER_DATA, key));
             }
         }
         return defaultValue;
     }
 
     public static double getDouble(String key, double defaultValue) {
-        System.out.println("Coming here");
         String value = properties.getProperty(key);
         if (value != null) {
             try {
                 return Double.parseDouble(value);
             } catch (NumberFormatException e) {
-                System.err.println("Error parsing double for key: " + key + ". Using default.");
+                logger.warning(String.format(Constants.ERROR_PROCESSING_EMPLOYEE_RECORD_DOUBLE_DATA, key));
             }
         }
         return defaultValue;
