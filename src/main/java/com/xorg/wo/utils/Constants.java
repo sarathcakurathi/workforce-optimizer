@@ -14,8 +14,8 @@ public final class Constants {
     public static final String EMPLOYEE_DATA_SKIP_HEADER="xorg.wo.emp.skipheader";
     public static final String EMPLOYEE_DATA_REQUIRED_FIELDS="xorg.wo.emp.required.fields";
     public static final String EMPLOYEE_DATA_MAX_REPORTING_LEVEL="xorg.wo.emp.max.reporting.level";
-    public static final String MANAGER_SALARY_LOWER_THRESHOLD="xorg.wo.manager.min.avg.salary";
-    public static final String MANAGER_SALARY_UPPER_THRESHOLD="xorg.wo.manager.max.avg.salary";
+    public static final String MANAGER_SALARY_LOWER_THRESHOLD="xorg.wo.manager.salary.lower.threshold";
+    public static final String MANAGER_SALARY_UPPER_THRESHOLD="xorg.wo.manager.salary.upper.threshold";
 
     // Employee/Manager defaults
     public static final int DEFAULT_MANAGER_ID = -1;
