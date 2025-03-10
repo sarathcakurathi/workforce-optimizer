@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class EmployeeHierarchyBuilder {
+    private final DataLoader dataLoader;
     private Map<Integer, Employee> reportingStructure;
     private Employee ceo = null;
     private final double managerSalaryLowerThreshold;
@@ -17,7 +18,8 @@ public class EmployeeHierarchyBuilder {
     private final int managerSalaryUpperThresholdPercentage;
     private final int employeeMaxReportingLevel;
 
-    public EmployeeHierarchyBuilder() {
+    public EmployeeHierarchyBuilder(DataLoader dataLoader) {
+        this.dataLoader = dataLoader;
         this.managerSalaryLowerThreshold = ConfigLoader.getDouble(Constants.MANAGER_SALARY_LOWER_THRESHOLD, Constants.MANAGER_SALARY_LOWER_THRESHOLD_DEFAULT);
         this.managerSalaryUpperThreshold = ConfigLoader.getDouble(Constants.MANAGER_SALARY_UPPER_THRESHOLD, Constants.MANAGER_SALARY_UPPER_THRESHOLD_DEFAULT);
         this.employeeMaxReportingLevel = ConfigLoader.getInt(Constants.EMPLOYEE_DATA_MAX_REPORTING_LEVEL, Constants.EMPLOYEE_MAX_REPORTING_LEVEL_DEFAULT);
@@ -63,7 +65,6 @@ public class EmployeeHierarchyBuilder {
 
     public void buildReportingStructure() {
         reportingStructure = new HashMap<>();
-        DataLoader dataLoader = new DataLoader();
         List<Employee> employeeList = dataLoader.loadEmployeeDataFile();
 
         // Populate map with employee objects

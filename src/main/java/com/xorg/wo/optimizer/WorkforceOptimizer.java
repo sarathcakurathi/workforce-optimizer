@@ -9,8 +9,12 @@ import java.util.List;
 import java.util.logging.Logger;
 
 public class WorkforceOptimizer {
-    EmployeeHierarchyBuilder employeeHierarchyBuilder = new EmployeeHierarchyBuilder();
+    private final EmployeeHierarchyBuilder employeeHierarchyBuilder;
     private static final Logger logger = Logger.getLogger( WorkforceOptimizer.class.getName() );
+
+    public WorkforceOptimizer(EmployeeHierarchyBuilder employeeHierarchyBuilder) {
+        this.employeeHierarchyBuilder = employeeHierarchyBuilder;
+    }
 
     private void prepareEmployeeData() {
         employeeHierarchyBuilder.buildReportingStructure();
@@ -23,7 +27,7 @@ public class WorkforceOptimizer {
     }
 
     private void recursivelyFindManagersWithSalaryDeviations(Employee employee, List<String> outliers) {
-        if (employee == null || employee.getReportees().isEmpty()) {
+        if (employee == null || employee.getReportees() == null || (employee.getReportees() != null && employee.getReportees().isEmpty())) {
             return;
         }
 
@@ -61,12 +65,14 @@ public class WorkforceOptimizer {
         }
 
         // Recursively check for all reportees
-        for (Employee reportee : employee.getReportees()) {
-            recursivelyFindManagersWithSalaryDeviations(reportee, outliers);
+        if (employee.getReportees() != null) {
+            for (Employee reportee : employee.getReportees()) {
+                recursivelyFindManagersWithSalaryDeviations(reportee, outliers);
+            }
         }
     }
 
-    private List<String> findManagersWithSalaryDeviations(Employee ceo) {
+    public List<String> findManagersWithSalaryDeviations(Employee ceo) {
         List<String> result = new ArrayList<>();
         recursivelyFindManagersWithSalaryDeviations(ceo, result);
         return result;
@@ -84,12 +90,14 @@ public class WorkforceOptimizer {
         }
 
         // Recursively explore all children increasing the reporting level
-        for (Employee reportee: employee.getReportees()) {
-            recursivelyFindEmployeesWithDeepHierarchy(reportee, level + 1, result);
+        if (employee.getReportees() != null) {
+            for (Employee reportee: employee.getReportees()) {
+                recursivelyFindEmployeesWithDeepHierarchy(reportee, level + 1, result);
+            }
         }
     }
 
-    private List<String> findEmployeesWithDeepHierarchy(Employee ceo) {
+    public List<String> findEmployeesWithDeepHierarchy(Employee ceo) {
         List<String> result = new ArrayList<>();
         recursivelyFindEmployeesWithDeepHierarchy(ceo, 1, result);
         return result;

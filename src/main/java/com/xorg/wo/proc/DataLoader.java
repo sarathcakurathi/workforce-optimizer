@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 import com.xorg.wo.model.UnprocessedEmployeeRecord;
 import com.xorg.wo.utils.Constants;
 
-class DataLoader {
+public class DataLoader {
     List<Employee> employeeList;
     private static final Logger logger = Logger.getLogger( DataLoader.class.getName() );
 
