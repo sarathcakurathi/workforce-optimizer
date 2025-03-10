@@ -15,6 +15,7 @@ Acceptance criteria:
 
 ### Non-Functional Requirements
 
+- Configurability - Dynamic parameter changes should not require code updates
 - Modularity - Ensure that modifications to one component have minimal impact on others
 - Reusability - Products or modules should remain reusable when incorporating new requirements
 - Safety - Handle exceptions gracefully to ensure a smooth and controlled exit
@@ -30,7 +31,7 @@ Acceptance criteria:
 ![target business architecture](assets/target-business-architecture.svg)
 
 #### Target Technical Architecture
-![target technical architecture](assets/target-technical-architecture.svg)
+![target technical architecture](assets/target-technical-architecture.jpeg)
 
 #### Assumptions
 
@@ -63,5 +64,10 @@ mvn clean compile
 
 Execute the project
 ```
-mvn exec:java -Dexec.mainClass="com.xorg.wo.Application"
+mvn clean compile exec:java -Dexec.mainClass="com.xorg.wo.Application"
+```
+
+Unit test
+```
+mvn test
 ```

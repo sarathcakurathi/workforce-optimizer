@@ -28,6 +28,11 @@ public class EmployeeHierarchyBuilderTest {
         builder = new EmployeeHierarchyBuilder(dataLoader);
     }
 
+    /**
+    * GIVEN a valid data for employee hierarchy
+    * WHEN reporting structure is built with mock employee list
+    * THEN validate the reporting structure is built as expected
+     */
     @Test
     void buildReportingStructure_validData_buildsHierarchy() {
         // Given
@@ -60,6 +65,11 @@ public class EmployeeHierarchyBuilderTest {
         assertEquals(employee, reportingStructure.get(3));
     }
 
+    /**
+     * GIVEN empty employee list
+     * WHEN reporting structure is built
+     * THEN validate CEO is not set and reporting structure is empty
+     */
     @Test
     void buildReportingStructure_emptyData_ceoIsNull() {
         // Given
@@ -76,6 +86,11 @@ public class EmployeeHierarchyBuilderTest {
     }
 
 
+    /**
+     * GIVEN mock employee list
+     * WHEN reporting structure is built
+     * THEN validate a missing manager id is provided then reportee should not be added
+     */
     @Test
     void buildReportingStructure_managerNotFound_reporteeNotAdded() {
         // Given
@@ -97,11 +112,17 @@ public class EmployeeHierarchyBuilderTest {
         assertTrue(actualCeo.getReportees().isEmpty());
         Map<Integer, Employee> reportingStructure = builder.getReportingStructure();
         assertNotNull(reportingStructure);
+        System.out.println(reportingStructure);
         assertEquals(2, reportingStructure.size());
         assertEquals(ceo, reportingStructure.get(1));
         assertEquals(employee, reportingStructure.get(3));
     }
 
+    /**
+     * GIVEN mock configuration params
+     * WHEN employee hierarchy builder is instantiated
+     * THEN validate the manager salary thresholds and reporting levels are set properly
+     */
     @Test
     void constructor_configLoaded_thresholdsSet() {
         // Given
