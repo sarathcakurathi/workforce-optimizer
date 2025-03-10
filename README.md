@@ -15,6 +15,7 @@ Acceptance criteria:
 
 ### Non-Functional Requirements
 
+- Configurability - Dynamic parameter changes should not require code updates
 - Modularity - Ensure that modifications to one component have minimal impact on others
 - Reusability - Products or modules should remain reusable when incorporating new requirements
 - Safety - Handle exceptions gracefully to ensure a smooth and controlled exit
@@ -30,10 +31,11 @@ Acceptance criteria:
 ![target business architecture](assets/target-business-architecture.svg)
 
 #### Target Technical Architecture
-![target technical architecture](assets/target-technical-architecture.svg)
+![target technical architecture](assets/target-technical-architecture.jpeg)
 
 #### Assumptions
 
+ - If CEO is not available in the data then abort the execution
  - CEO has an employee id of `-1`
  - A valid employee must have at least an employee ID and a salary
     - An invalid employee record will be dropped from processing (Eg: employee doesn't have an id/salary)
@@ -45,7 +47,8 @@ Acceptance criteria:
  - Java - 21.0.4
  - Maven - 3.9.9
  - JUnit - 5.10.2
- - Development Environment - Visual Studio Code
+ - Mockito - 5.15.2
+ - Development Environment - IntelliJ IDEA Community edition
  - Architecture design - Lucid chart
  
 ### Environment Setup
@@ -62,5 +65,10 @@ mvn clean compile
 
 Execute the project
 ```
-mvn exec:java -Dexec.mainClass="com.xorg.wo.Application"
+mvn clean compile exec:java -Dexec.mainClass="com.xorg.wo.Application"
+```
+
+Unit test
+```
+mvn test
 ```
