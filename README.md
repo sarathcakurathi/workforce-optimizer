@@ -47,7 +47,8 @@ Acceptance criteria:
  - Java - 21.0.4
  - Maven - 3.9.9
  - JUnit - 5.10.2
- - Development Environment - Visual Studio Code
+ - Mockito - 5.15.2
+ - Development Environment - IntelliJ IDEA Community edition
  - Architecture design - Lucid chart
  
 ### Environment Setup
